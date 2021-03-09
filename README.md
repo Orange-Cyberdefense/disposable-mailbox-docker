@@ -60,3 +60,4 @@ If you encounter troubles, here are ways to debug:
 - Apache: [https://httpd.apache.org/](https://httpd.apache.org/)
 - Synox/Disposable-mailbox: [https://github.com/synox/disposable-mailbox](https://github.com/synox/disposable-mailbox)
 - Let's Encrypt: [https://letsencrypt.org/](https://letsencrypt.org/)
+- OpenSSL: [https://www.openssl.org/](https://www.openssl.org/)
