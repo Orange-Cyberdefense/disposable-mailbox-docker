@@ -29,6 +29,8 @@ The web server uses both HTTP and HTTPS, but redirects HTTP to HTTPS. The certif
 5. Open your browser on the localhost/chosen domain port `80` or `443` and you should see the landing page.
 6. Run some tests using your favorite mail client to send mails to your Disposable-mailbox Docker addresses.
 
+![alt text](mailbox.png)
+
 **Optional:**
 - Edit the `web/disposable-mailbox.conf` file to add your IPs authorized to access the application in the `Allow from` lines and uncomment it. All the IPs out of the `Allow from` won't be able to access the web service (but can send emails to the mail server).
 
