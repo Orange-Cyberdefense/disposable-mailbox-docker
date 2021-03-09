@@ -7,13 +7,18 @@ Yopmail is a **light webmail client** designed to **receive mails only** (no sen
 
 ## Why Disposable-mailbox Docker ?
 Yopmail like services are public, but for **privacy** you can run your own. You just need to install a mail receiver, a mail transfer agent and an HTTP server; then configure them all. This may be a bit long and complicated for unexperienced system administrators.
+
 The easiest thing to solve the problem is to have **everything installed and configured** in a regular Docker. That's what is Disposable-mailbox Docker.
 
 ## Project architecture
 This project uses [**Docker**](https://www.docker.com/) and [**docker-compose**](https://docs.docker.com/compose/).
+
 The docker-compose runs **2 docker containers**: one for the email agents and one for the web server.
+
 The email agents in use for this project are [**Dovecot**](https://www.dovecot.org/) and [**Postfix**](http://www.postfix.org/). Those services are well known and well documented. Postfix receives the emails and Dovecot allows the web server to retrieve them through **IMAP** protocol.
+
 The web server is a simple [**Apache2**](https://httpd.apache.org/) running [**synox/disposable-mailbox**](https://github.com/synox/disposable-mailbox) open source project.
+
 The web server uses both HTTP and HTTPS, but redirects HTTP to HTTPS. The certificate is auto-generated using [**Let's Encrypt**](https://letsencrypt.org/).
 
 ## Installation
