@@ -1,0 +1,52 @@
+# See /usr/share/postfix/main.cf.dist for a commented, more complete version
+
+smtpd_banner = $myhostname ESMTP
+biff = no
+# appending .domain is the MUA's job.
+append_dot_mydomain = no
+readme_directory = no
+
+# See http://www.postfix.org/COMPATIBILITY_README.html -- default to 2 on
+# fresh installs.
+compatibility_level = 2
+
+# TLS parameters
+smtpd_tls_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem
+smtpd_tls_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
+smtpd_use_tls=yes
+smtpd_tls_session_cache_database = btree:${data_directory}/smtpd_scache
+smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
+
+# See /usr/share/doc/postfix/TLS_README.gz in the postfix-doc package for
+# information on enabling SSL in the smtp client.
+
+smtpd_relay_restrictions = permit_mynetworks permit_sasl_authenticated reject_unauth_destination
+myhostname = CHANGEME
+
+mydomain = CHANGEME
+
+alias_maps = hash:/etc/aliases
+alias_database = hash:/etc/aliases
+virtual_alias_maps = hash:/etc/postfix/virtual
+
+#myorigin = /etc/mailname
+myorigin = $mydomain
+
+mydestination = $myhostname, $mydomain, localhost.$mydomain, localhost
+relayhost = 
+mynetworks = 127.0.0.0/8
+mailbox_size_limit = 0
+recipient_delimiter = +
+inet_interfaces = all
+#inet_protocols = all
+inet_protocols = ipv4
+
+home_mailbox = /
+
+# SMTP-Auth settings
+#smtpd_sasl_type = dovecot
+#smtpd_sasl_path = private/auth
+#smtpd_sasl_auth_enable = yes
+#smtpd_sasl_security_options = noanonymous
+#smtpd_sasl_local_domain = $myhostname
+#smtpd_recipient_restrictions = permit_mynetworks,permit_auth_destination,permit_sasl_authenticated,reject
