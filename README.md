@@ -25,7 +25,7 @@ The web server uses both HTTP and HTTPS, but redirects HTTP to HTTPS. The certif
 1. Clone this repo
 2. Edit the `.env` file. Change the `FQDN` value by your domain and the `EMAIL` value by your email address. If your service is accessible through the Internet, you can change the value of `LETSENCRYPT` to `yes` to get a recognized HTTPS certificate.
 3. Save the file
-4. Run `docker-compose up` and let docker build the project.
+4. Run `docker-compose up -d` and let docker build the project.
 5. Open your browser on the localhost/chosen domain port `80` or `443` and you should see the landing page.
 6. Run some tests using your favorite mail client to send mails to your Disposable-mailbox Docker addresses.
 
@@ -40,7 +40,7 @@ If you encounter troubles, here are ways to debug:
 **Get logs from syslog:**
 - run interactively a container using `docker exec -it <container id> /bin/bash`
 - install rsyslog `apt-get update && apt-get install rsyslog`
-- run and get logs `/etc/init.d/rsyslog start && tail -f /var/log/syslog`
+- run and get logs `/etc/init.d/rsyslog start && tail -f /var/log/syslog` or just `docker-compose logs -f <container name>` 
 
 **List the mails received:**
 - run interactively a container using `docker exec -it <container id> /bin/bash`
