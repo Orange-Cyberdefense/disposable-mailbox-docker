@@ -38,9 +38,7 @@ The web server uses both HTTP and HTTPS, but redirects HTTP to HTTPS. The certif
 If you encounter troubles, here are ways to debug:
 
 **Get logs from syslog:**
-- run interactively a container using `docker exec -it <container id> /bin/bash`
-- install rsyslog `apt-get update && apt-get install rsyslog`
-- run and get logs `/etc/init.d/rsyslog start && tail -f /var/log/syslog` or just `docker-compose logs -f <container name>` 
+- run `docker-compose logs -f <container name>` 
 
 **List the mails received:**
 - run interactively a container using `docker exec -it <container id> /bin/bash`
