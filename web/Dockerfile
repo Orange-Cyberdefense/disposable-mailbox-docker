@@ -3,7 +3,7 @@ ARG fqdn
 ARG email
 
 RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get -y install \
-    nano apache2 php libapache2-mod-php php-imap curl netcat certbot python-certbot-apache openssl
+    nano apache2 php libapache2-mod-php php-imap curl netcat certbot python3-certbot-apache openssl
 
 RUN a2enmod php7.3
 RUN a2enmod rewrite
