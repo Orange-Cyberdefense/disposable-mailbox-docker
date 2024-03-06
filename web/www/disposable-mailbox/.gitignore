@@ -1,0 +1,6 @@
+.idea
+*.patch
+.php_cs.cache
+src/test.php
+src/config.php
+src/config.sample.php

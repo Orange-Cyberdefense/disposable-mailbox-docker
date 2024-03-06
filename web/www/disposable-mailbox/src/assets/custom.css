@@ -1,0 +1,114 @@
+
+html > body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+#my-address {
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    color: black;
+}
+
+.my-address-block {
+    background-color: #F8F9FA;
+    padding: 0.5rem;
+    white-space: nowrap;
+    padding-left: 0;
+    margin-left: 1rem;
+    text-align: center;
+    padding-right: 0;
+}
+
+.get-new-address-col {
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.email-list-item {
+    padding-left: 0;
+    padding-bottom: 0;
+}
+
+.copy-button {
+    font-size: 75%;
+    color: #808080;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    border-radius: 0.25rem;
+}
+
+.copy-button:hover {
+    color: #fff;
+    background-color: #007BFF;
+}
+
+header {
+    /*background-color: #f9f9f9;*/
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+main {
+    flex: 1; /* stick footer to the bottom */
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+#language-selection {
+    width: 10rem;
+}
+
+footer {
+    padding-top: 1rem;
+    background-color: #eeeeee;
+}
+
+.open-collapse-button {
+    background-color: transparent;
+    width: 3rem;
+}
+
+.open-collapse-button > i {
+    font-size: 1.5em;
+}
+
+[aria-expanded="false"] .expand-button-closed {
+    display: block;
+}
+
+[aria-expanded="false"] .expand-button-opened {
+    display: none;
+}
+
+[aria-expanded="true"] .expand-button-closed {
+    display: none;
+}
+
+[aria-expanded="true"] .expand-button-opened {
+    display: block;
+}
+
+#new-content-avalable {
+    display: none;
+    text-align: center;
+}
+
+.email-body {
+    word-wrap: break-word;
+}
+
+.alert-fixed {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 9999;
+    border-radius: 0px;
+    text-align: center;
+}
+#address-box-edit {
+    margin: 1rem;
+}
